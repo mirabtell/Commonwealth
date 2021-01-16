@@ -2,19 +2,13 @@ package sample;
 
 import javafx.fxml.FXML;
 
+import java.awt.event.ActionEvent;
+
 public class Controller {
 
-    public Controller() {
-    }
-    @FXML
-    private void initialize() {
-    }
-    @FXML
-    public static void test(){
+
+
+    public void test(javafx.event.ActionEvent e) {
         System.out.println("Hello");
-    }
-    @FXML
-    public static void running(){
-        System.out.println("Hello2");
     }
 }

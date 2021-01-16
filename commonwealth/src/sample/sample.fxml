@@ -11,6 +11,10 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" text="Button" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="74.0" layoutY="88.0" mnemonicParsing="false" onAction="#test" text="Button" />
+         </children>
+      </AnchorPane>
    </children>
 </GridPane>
