@@ -3,10 +3,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Home">
+<AnchorPane prefHeight="358.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Home">
    <children>
       <Label layoutX="99.0" layoutY="47.0" text="Top Projects" />
       <ListView layoutX="32.0" layoutY="74.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="457.0" layoutY="355.0" mnemonicParsing="false" onAction="#goCreate" text="Create new projects" />
+      <Button layoutX="72.0" layoutY="282.0" mnemonicParsing="false" onAction="#goCreate" text="Create new projects" />
+      <Hyperlink fx:id="proj1" layoutX="103.0" layoutY="89.0" text="Hyperlink" />
+      <Hyperlink fx:id="proj2" layoutX="103.0" layoutY="127.0" text="Hyperlink" />
+      <Hyperlink fx:id="proj3" layoutX="103.0" layoutY="163.0" text="Hyperlink" />
+      <Hyperlink fx:id="proj4" layoutX="103.0" layoutY="200.0" text="Hyperlink" />
+      <Hyperlink fx:id="proj5" layoutX="103.0" layoutY="235.0" text="Hyperlink" />
    </children>
 </AnchorPane>

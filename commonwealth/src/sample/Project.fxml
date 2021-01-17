@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="name" prefHeight="326.0" prefWidth="192.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Project">
+   <children>
+      <Label fx:id="projectName" layoutX="77.0" layoutY="68.0" text="Label" />
+      <Label layoutX="77.0" layoutY="110.0" text="Label" />
+      <Label fx:id="numOfHelpers" layoutX="77.0" layoutY="155.0" text="Label" />
+      <Label fx:id="location" layoutX="77.0" layoutY="200.0" text="Label" />
+      <Button layoutX="58.0" layoutY="259.0" mnemonicParsing="false" onAction="#goHome" text="Go Home" />
+   </children>
+</AnchorPane>
