@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -13,14 +19,24 @@
    <children>
       <AnchorPane prefHeight="201.0" prefWidth="387.0">
          <children>
-            <Button layoutX="69.0" layoutY="22.0" mnemonicParsing="false" onAction="#setForm" text="Set Form" />
-            <Button layoutX="242.0" layoutY="22.0" mnemonicParsing="false" onAction="#getForm" text="Show Form" />
-            <TextField fx:id="nameField" layoutX="26.0" layoutY="67.0" promptText="Name" />
-            <TextField fx:id="projectNameField" layoutX="26.0" layoutY="100.0" promptText="Project Name" />
-            <TextField fx:id="numOfHelpersField" layoutX="26.0" layoutY="131.0" promptText="Number of people" />
-            <TextField fx:id="locationField" layoutX="26.0" layoutY="163.0" promptText="Location" />
-            <TextField fx:id="fileName" layoutX="206.0" layoutY="67.0" promptText="Enter project name" />
-            <Button layoutX="247.0" layoutY="131.0" mnemonicParsing="false" onAction="#goHome" text="Go Home" />
+            <Text fill="WHITE" layoutX="110.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commonwealth" textAlignment="CENTER" wrappingWidth="251.2060546875">
+               <font>
+                  <Font name="Avenir Book" size="32.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="78.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="add your community service project!" textAlignment="CENTER" wrappingWidth="314.2060546875">
+               <font>
+                  <Font name="Avenir Book" size="19.0" />
+               </font>
+            </Text>
+            <Button layoutX="26.0" layoutY="123.0" mnemonicParsing="false" onAction="#setForm" prefHeight="42.0" prefWidth="167.0" text="Set Form" />
+            <Button layoutX="256.0" layoutY="123.0" mnemonicParsing="false" onAction="#getForm" prefHeight="42.0" prefWidth="167.0" text="Show Form" />
+            <TextField fx:id="nameField" layoutX="26.0" layoutY="197.0" prefHeight="36.0" prefWidth="167.0" promptText="Name" />
+            <TextField fx:id="projectNameField" layoutX="26.0" layoutY="243.0" prefHeight="36.0" prefWidth="167.0" promptText="Project Name" stylesheets="@style.css" />
+            <TextField fx:id="numOfHelpersField" layoutX="26.0" layoutY="289.0" prefHeight="36.0" prefWidth="167.0" promptText="Number of people" stylesheets="@style.css" />
+            <TextField fx:id="locationField" layoutX="26.0" layoutY="335.0" prefHeight="36.0" prefWidth="167.0" promptText="Location" stylesheets="@style.css" />
+            <TextField fx:id="fileName" layoutX="256.0" layoutY="197.0" prefHeight="36.0" prefWidth="167.0" promptText="Enter project name" stylesheets="@style.css" />
+            <Button layoutX="26.0" layoutY="418.0" mnemonicParsing="false" onAction="#goHome" prefHeight="51.0" prefWidth="398.0" stylesheets="@style.css" text="Go Home" />
          </children>
       </AnchorPane>
    </children>
