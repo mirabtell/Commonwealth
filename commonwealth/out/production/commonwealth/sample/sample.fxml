@@ -11,6 +11,17 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" text="Button" />
+      <AnchorPane prefHeight="201.0" prefWidth="387.0">
+         <children>
+            <Button layoutX="69.0" layoutY="22.0" mnemonicParsing="false" onAction="#setForm" text="Set Form" />
+            <Button layoutX="242.0" layoutY="22.0" mnemonicParsing="false" onAction="#getForm" text="Show Form" />
+            <TextField fx:id="nameField" layoutX="26.0" layoutY="67.0" promptText="Name" />
+            <TextField fx:id="projectNameField" layoutX="26.0" layoutY="100.0" promptText="Project Name" />
+            <TextField fx:id="numOfHelpersField" layoutX="26.0" layoutY="131.0" promptText="Number of people" />
+            <TextField fx:id="locationField" layoutX="26.0" layoutY="163.0" promptText="Location" />
+            <TextField fx:id="fileName" layoutX="206.0" layoutY="67.0" promptText="Enter project name" />
+            <Button layoutX="247.0" layoutY="131.0" mnemonicParsing="false" onAction="#goHome" text="Go Home" />
+         </children>
+      </AnchorPane>
    </children>
 </GridPane>
