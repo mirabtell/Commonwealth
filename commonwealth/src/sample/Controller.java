@@ -67,6 +67,8 @@ public class Controller {
 
     }
     public void setForm(javafx.event.ActionEvent event){
+
+        /*
         MongoClient mongoClient = null;
         try {
             // Set up mongo db
@@ -79,22 +81,25 @@ public class Controller {
             database.createCollection("services", null);
             System.out.println("Connected to MongoDB!");
 
-            // form completion
-            /*
+
             form = createProject.getInstance();
             form.setName(nameField.getText());
             form.setLocation(locationField.getText());
             form.setNumOfHelpers(Integer.parseInt(numOfHelpersField.getText()));
             form.setProjectName(projectNameField.getText());
-*/
+/*
             DBCollection collection = database.getCollection("services");
             BasicDBObject formEntry = new BasicDBObject();
+
+
             formEntry.put("nameField", nameField.getText());
             formEntry.put("locationField", locationField.getText());
             formEntry.put("numOfHelpers", numOfHelpersField.getText());
             formEntry.put("projectNameField", projectNameField.getText());
             collection.insert(formEntry);
-            /*
+            */
+
+
             try{
                 FileOutputStream f = new FileOutputStream(new File(form.projectName + ".txt"));
                 ObjectOutputStream o = new ObjectOutputStream(f);
@@ -106,7 +111,7 @@ public class Controller {
             } catch (IOException e) {
                 System.out.println("Error initializing stream");
             }
-            */
+   /*
 
 
         } catch (MongoException e) {
@@ -115,6 +120,8 @@ public class Controller {
             if(mongoClient!=null)
                 mongoClient.close();
         }
+        
+    */
 
 
     }
