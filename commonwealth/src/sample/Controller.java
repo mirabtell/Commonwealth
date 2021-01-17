@@ -2,7 +2,12 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,6 +26,14 @@ public class Controller {
     public TextField fileName;
     test form;
     test output;
+    public void goHome(ActionEvent event) throws IOException {
+        Parent homeRoot = FXMLLoader.load(getClass().getResource("Home.fxml"));
+        Scene homeScene = new Scene(homeRoot);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setTitle("Home");
+        window.setScene(homeScene);
+        window.show();
+    }
     public void getForm(ActionEvent event) {
         output = test.getInstance();
         try{
