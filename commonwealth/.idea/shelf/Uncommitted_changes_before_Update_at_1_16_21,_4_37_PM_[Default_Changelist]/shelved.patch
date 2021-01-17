@@ -1,0 +1,28 @@
+Index: out/production/commonwealth/sample/sample.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.layout.*?>\r\n\r\n<GridPane alignment=\"center\" hgap=\"10\" vgap=\"10\" xmlns=\"http://javafx.com/javafx/11.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"sample.Controller\">\r\n   <columnConstraints>\r\n      <ColumnConstraints />\r\n   </columnConstraints>\r\n   <rowConstraints>\r\n      <RowConstraints />\r\n   </rowConstraints>\r\n   <children>\r\n      <Button mnemonicParsing=\"false\" text=\"Button\" />\r\n   </children>\r\n</GridPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/commonwealth/sample/sample.fxml b/out/production/commonwealth/sample/sample.fxml
+--- a/out/production/commonwealth/sample/sample.fxml	(revision 78af0472f494f86ff633399afb9eb84a8e261e77)
++++ b/out/production/commonwealth/sample/sample.fxml	(date 1610832746714)
+@@ -11,6 +11,16 @@
+       <RowConstraints />
+    </rowConstraints>
+    <children>
+-      <Button mnemonicParsing="false" text="Button" />
++      <AnchorPane prefHeight="201.0" prefWidth="387.0">
++         <children>
++            <Button layoutX="69.0" layoutY="22.0" mnemonicParsing="false" onAction="#setForm" text="Set Form" />
++            <Button layoutX="242.0" layoutY="22.0" mnemonicParsing="false" onAction="#getForm" text="Show Form" />
++            <TextField fx:id="nameField" layoutX="26.0" layoutY="67.0" promptText="Name" />
++            <TextField fx:id="projectNameField" layoutX="26.0" layoutY="100.0" promptText="Project Name" />
++            <TextField fx:id="numOfHelpersField" layoutX="26.0" layoutY="131.0" promptText="Number of people" />
++            <TextField fx:id="locationField" layoutX="26.0" layoutY="163.0" promptText="Location" />
++            <TextField fx:id="fileName" layoutX="206.0" layoutY="67.0" promptText="Enter project name" />
++         </children>
++      </AnchorPane>
+    </children>
+ </GridPane>

@@ -1,0 +1,158 @@
+Index: src/sample/sample.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import javafx.scene.control.*?>\n<?import javafx.scene.layout.*?>\n\n<GridPane alignment=\"center\" hgap=\"10\" vgap=\"10\" xmlns=\"http://javafx.com/javafx/11.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"sample.Controller\">\n   <columnConstraints>\n      <ColumnConstraints />\n   </columnConstraints>\n   <rowConstraints>\n      <RowConstraints />\n   </rowConstraints>\n   <children>\n      <AnchorPane prefHeight=\"200.0\" prefWidth=\"200.0\">\n         <children>\n            <Button layoutX=\"74.0\" layoutY=\"88.0\" mnemonicParsing=\"false\" onAction=\"#test\" text=\"Button\" />\n         </children>\n      </AnchorPane>\n   </children>\n</GridPane>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/sample/sample.fxml b/src/sample/sample.fxml
+--- a/src/sample/sample.fxml	(revision 306cccdde3f53ceeb697aeed1d6c011324aa6806)
++++ b/src/sample/sample.fxml	(date 1610830185756)
+@@ -1,20 +1,47 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.layout.*?>
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.control.CheckMenuItem?>
++<?import javafx.scene.control.Menu?>
++<?import javafx.scene.control.MenuBar?>
++<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.layout.ColumnConstraints?>
++<?import javafx.scene.layout.GridPane?>
++<?import javafx.scene.layout.RowConstraints?>
+ 
+-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
++<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <columnConstraints>
+       <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+       <RowConstraints />
++      <RowConstraints />
++      <RowConstraints />
+    </rowConstraints>
+    <children>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
++      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+          <children>
+             <Button layoutX="74.0" layoutY="88.0" mnemonicParsing="false" onAction="#test" text="Button" />
+          </children>
+       </AnchorPane>
++      <MenuBar>
++        <menus>
++          <Menu mnemonicParsing="false" onAction="#handleButtonAction1" text="Commonwealth Home">
++               <items>
++                  <CheckMenuItem mnemonicParsing="false" text="View Page" />
++               </items>
++          </Menu>
++          <Menu mnemonicParsing="false" text="Propose a Project">
++               <items>
++                  <CheckMenuItem mnemonicParsing="false" text="View Page" />
++               </items>
++          </Menu>
++          <Menu mnemonicParsing="false" text="About Us">
++               <items>
++                  <CheckMenuItem mnemonicParsing="false" text="View Page" />
++               </items>
++          </Menu>
++        </menus>
++      </MenuBar>
+    </children>
+ </GridPane>
+Index: src/sample/Controller.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package sample;\n\nimport javafx.fxml.FXML;\n\nimport java.awt.event.ActionEvent;\n\npublic class Controller {\n\n\n\n    public void test(javafx.event.ActionEvent e) {\n        System.out.println(\"Hello\");\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/sample/Controller.java b/src/sample/Controller.java
+--- a/src/sample/Controller.java	(revision 306cccdde3f53ceeb697aeed1d6c011324aa6806)
++++ b/src/sample/Controller.java	(date 1610830756046)
+@@ -1,12 +1,22 @@
+ package sample;
+ 
+ import javafx.fxml.FXML;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Parent;
++import javafx.scene.Scene;
++import javafx.scene.control.Menu;
+ 
+-import java.awt.event.ActionEvent;
+ 
+ public class Controller {
+ 
++    Menu b2, b3, b4;
+ 
++@FXML
++    private void handleButtonAction1 (javafx.event.ActionEvent event) throws Exception {
++        Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("sample.fxml"));
++        System.out.println("menu change"); // Change scenes with menu clicks
++
++    }
+ 
+     public void test(javafx.event.ActionEvent e) {
+         System.out.println("Hello");
+Index: out/production/commonwealth/sample/sample.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.layout.*?>\r\n\r\n<GridPane alignment=\"center\" hgap=\"10\" vgap=\"10\" xmlns=\"http://javafx.com/javafx/11.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"sample.Controller\">\r\n   <columnConstraints>\r\n      <ColumnConstraints />\r\n   </columnConstraints>\r\n   <rowConstraints>\r\n      <RowConstraints />\r\n   </rowConstraints>\r\n   <children>\r\n      <Button mnemonicParsing=\"false\" text=\"Button\" />\r\n   </children>\r\n</GridPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/commonwealth/sample/sample.fxml b/out/production/commonwealth/sample/sample.fxml
+--- a/out/production/commonwealth/sample/sample.fxml	(revision 306cccdde3f53ceeb697aeed1d6c011324aa6806)
++++ b/out/production/commonwealth/sample/sample.fxml	(date 1610830554158)
+@@ -1,16 +1,47 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.layout.*?>
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.control.CheckMenuItem?>
++<?import javafx.scene.control.Menu?>
++<?import javafx.scene.control.MenuBar?>
++<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.layout.ColumnConstraints?>
++<?import javafx.scene.layout.GridPane?>
++<?import javafx.scene.layout.RowConstraints?>
+ 
+-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
++<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <columnConstraints>
+       <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+       <RowConstraints />
++      <RowConstraints />
++      <RowConstraints />
+    </rowConstraints>
+    <children>
+-      <Button mnemonicParsing="false" text="Button" />
++      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
++         <children>
++            <Button layoutX="74.0" layoutY="88.0" mnemonicParsing="false" onAction="#test" text="Button" />
++         </children>
++      </AnchorPane>
++      <MenuBar>
++        <menus>
++          <Menu mnemonicParsing="false" onAction="#handleButtonAction1" text="Commonwealth Home">
++               <items>
++                  <CheckMenuItem mnemonicParsing="false" text="View Page" />
++               </items>
++          </Menu>
++          <Menu mnemonicParsing="false" text="Propose a Project">
++               <items>
++                  <CheckMenuItem mnemonicParsing="false" text="View Page" />
++               </items>
++          </Menu>
++          <Menu mnemonicParsing="false" text="About Us">
++               <items>
++                  <CheckMenuItem mnemonicParsing="false" text="View Page" />
++               </items>
++          </Menu>
++        </menus>
++      </MenuBar>
+    </children>
+ </GridPane>

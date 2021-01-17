@@ -1,0 +1,141 @@
+Index: src/sample/Home.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package sample;\n\nimport javafx.event.ActionEvent;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Node;\nimport javafx.scene.Parent;\nimport javafx.scene.Scene;\nimport javafx.stage.Stage;\n\nimport java.io.IOException;\n\npublic class Home {\n\n    public void goCreate(ActionEvent event) throws IOException {\n        Parent homeRoot = FXMLLoader.load(getClass().getResource(\"sample.fxml\"));\n        Scene homeScene = new Scene(homeRoot);\n        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();\n        window.setTitle(\"Create Project\");\n        window.setScene(homeScene);\n        window.show();\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/sample/Home.java b/src/sample/Home.java
+--- a/src/sample/Home.java	(revision 04570fb448a0fe4c7205cee7b8dd2481d686edf0)
++++ b/src/sample/Home.java	(date 1610848313886)
+@@ -17,6 +17,7 @@
+         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+         window.setTitle("Create Project");
+         window.setScene(homeScene);
++        homeScene.getStylesheets().add(Home.class.getResource("homestyle.css").toExternalForm());
+         window.show();
+     }
+ }
+Index: out/production/commonwealth/sample/sample.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import javafx.scene.control.Button?>\n<?import javafx.scene.control.TextField?>\n<?import javafx.scene.layout.AnchorPane?>\n<?import javafx.scene.layout.ColumnConstraints?>\n<?import javafx.scene.layout.GridPane?>\n<?import javafx.scene.layout.RowConstraints?>\n<?import javafx.scene.text.Font?>\n<?import javafx.scene.text.Text?>\n\n<GridPane alignment=\"center\" hgap=\"10\" vgap=\"10\" xmlns=\"http://javafx.com/javafx/15.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"sample.Controller\">\n   <columnConstraints>\n      <ColumnConstraints />\n   </columnConstraints>\n   <rowConstraints>\n      <RowConstraints />\n   </rowConstraints>\n   <children>\n      <AnchorPane prefHeight=\"201.0\" prefWidth=\"387.0\">\n         <children>\n            <Text layoutX=\"110.0\" layoutY=\"39.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Commonwealth\" textAlignment=\"CENTER\" wrappingWidth=\"251.2060546875\">\n               <font>\n                  <Font name=\"Avenir Book\" size=\"32.0\" />\n               </font>\n            </Text>\n            <Button layoutX=\"26.0\" layoutY=\"123.0\" mnemonicParsing=\"false\" onAction=\"#setForm\" prefHeight=\"42.0\" prefWidth=\"167.0\" text=\"Set Form\" />\n            <Button layoutX=\"256.0\" layoutY=\"123.0\" mnemonicParsing=\"false\" onAction=\"#getForm\" prefHeight=\"42.0\" prefWidth=\"167.0\" text=\"Show Form\" />\n            <TextField fx:id=\"nameField\" layoutX=\"26.0\" layoutY=\"197.0\" prefHeight=\"36.0\" prefWidth=\"167.0\" promptText=\"Name\" />\n            <TextField fx:id=\"projectNameField\" layoutX=\"26.0\" layoutY=\"243.0\" prefHeight=\"36.0\" prefWidth=\"167.0\" promptText=\"Project Name\" stylesheets=\"@style.css\" />\n            <TextField fx:id=\"numOfHelpersField\" layoutX=\"26.0\" layoutY=\"289.0\" prefHeight=\"36.0\" prefWidth=\"167.0\" promptText=\"Number of people\" stylesheets=\"@style.css\" />\n            <TextField fx:id=\"locationField\" layoutX=\"26.0\" layoutY=\"335.0\" prefHeight=\"36.0\" prefWidth=\"167.0\" promptText=\"Location\" stylesheets=\"@style.css\" />\n            <TextField fx:id=\"fileName\" layoutX=\"256.0\" layoutY=\"197.0\" prefHeight=\"36.0\" prefWidth=\"167.0\" promptText=\"Enter project name\" stylesheets=\"@style.css\" />\n            <Button layoutX=\"26.0\" layoutY=\"418.0\" mnemonicParsing=\"false\" onAction=\"#goHome\" prefHeight=\"51.0\" prefWidth=\"398.0\" stylesheets=\"@style.css\" text=\"Go Home\" />\n            <Text layoutX=\"78.0\" layoutY=\"78.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"add your community service project!\" textAlignment=\"CENTER\" wrappingWidth=\"314.2060546875\">\n               <font>\n                  <Font name=\"Avenir Book\" size=\"19.0\" />\n               </font>\n            </Text>\n         </children>\n      </AnchorPane>\n   </children>\n</GridPane>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/commonwealth/sample/sample.fxml b/out/production/commonwealth/sample/sample.fxml
+--- a/out/production/commonwealth/sample/sample.fxml	(revision 04570fb448a0fe4c7205cee7b8dd2481d686edf0)
++++ b/out/production/commonwealth/sample/sample.fxml	(date 1610847978992)
+@@ -19,24 +19,24 @@
+    <children>
+       <AnchorPane prefHeight="201.0" prefWidth="387.0">
+          <children>
+-            <Text layoutX="110.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commonwealth" textAlignment="CENTER" wrappingWidth="251.2060546875">
++            <Text fill="WHITE" layoutX="6.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commonwealth" textAlignment="CENTER" wrappingWidth="465.2060546875">
+                <font>
+-                  <Font name="Avenir Book" size="32.0" />
++                  <Font name="Trebuchet MS Bold" size="62.0" />
+                </font>
+             </Text>
+-            <Button layoutX="26.0" layoutY="123.0" mnemonicParsing="false" onAction="#setForm" prefHeight="42.0" prefWidth="167.0" text="Set Form" />
+-            <Button layoutX="256.0" layoutY="123.0" mnemonicParsing="false" onAction="#getForm" prefHeight="42.0" prefWidth="167.0" text="Show Form" />
+-            <TextField fx:id="nameField" layoutX="26.0" layoutY="197.0" prefHeight="36.0" prefWidth="167.0" promptText="Name" />
+-            <TextField fx:id="projectNameField" layoutX="26.0" layoutY="243.0" prefHeight="36.0" prefWidth="167.0" promptText="Project Name" stylesheets="@style.css" />
+-            <TextField fx:id="numOfHelpersField" layoutX="26.0" layoutY="289.0" prefHeight="36.0" prefWidth="167.0" promptText="Number of people" stylesheets="@style.css" />
+-            <TextField fx:id="locationField" layoutX="26.0" layoutY="335.0" prefHeight="36.0" prefWidth="167.0" promptText="Location" stylesheets="@style.css" />
+-            <TextField fx:id="fileName" layoutX="256.0" layoutY="197.0" prefHeight="36.0" prefWidth="167.0" promptText="Enter project name" stylesheets="@style.css" />
+-            <Button layoutX="26.0" layoutY="418.0" mnemonicParsing="false" onAction="#goHome" prefHeight="51.0" prefWidth="398.0" stylesheets="@style.css" text="Go Home" />
+-            <Text layoutX="78.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="add your community service project!" textAlignment="CENTER" wrappingWidth="314.2060546875">
++            <Text fill="WHITE" layoutX="78.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="add your community service project!" textAlignment="CENTER" wrappingWidth="314.2060546875">
+                <font>
+                   <Font name="Avenir Book" size="19.0" />
+                </font>
+             </Text>
++            <Button layoutX="26.0" layoutY="143.0" mnemonicParsing="false" onAction="#setForm" prefHeight="42.0" prefWidth="167.0" text="Set Form" />
++            <Button layoutX="256.0" layoutY="143.0" mnemonicParsing="false" onAction="#getForm" prefHeight="42.0" prefWidth="167.0" text="Show Form" />
++            <TextField fx:id="nameField" layoutX="26.0" layoutY="217.0" prefHeight="36.0" prefWidth="167.0" promptText="Name" />
++            <TextField fx:id="projectNameField" layoutX="26.0" layoutY="263.0" prefHeight="36.0" prefWidth="167.0" promptText="Project Name" stylesheets="@style.css" />
++            <TextField fx:id="numOfHelpersField" layoutX="26.0" layoutY="309.0" prefHeight="36.0" prefWidth="167.0" promptText="Number of people" stylesheets="@style.css" />
++            <TextField fx:id="locationField" layoutX="26.0" layoutY="355.0" prefHeight="36.0" prefWidth="167.0" promptText="Location" stylesheets="@style.css" />
++            <TextField fx:id="fileName" layoutX="256.0" layoutY="217.0" prefHeight="36.0" prefWidth="167.0" promptText="Enter project name" stylesheets="@style.css" />
++            <Button layoutX="26.0" layoutY="438.0" mnemonicParsing="false" onAction="#goHome" prefHeight="51.0" prefWidth="398.0" text="Go Home" />
+          </children>
+       </AnchorPane>
+    </children>
+Index: src/sample/homestyle.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/sample/homestyle.css b/src/sample/homestyle.css
+new file mode 100644
+--- /dev/null	(date 1610848115753)
++++ b/src/sample/homestyle.css	(date 1610848115753)
+@@ -0,0 +1,21 @@
++.root {
++    -fx-background-image: url("commonwealth3.png");
++}
++
++.label {
++    -fx-font-size: 16px;
++    -fx-font-weight: bold;
++    -fx-text-fill: #333333;
++    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
++}
++.button {
++    -fx-text-fill: white;
++    -fx-font-family: "Arial Narrow";
++    -fx-font-weight: bold;
++    -fx-background-color: linear-gradient(#b5a6d3, #b586d3);
++    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
++}
++
++.button:hover {
++    -fx-background-color: linear-gradient(#b586d3, #b5a6d3);
++}
+Index: src/sample/sample.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import javafx.scene.control.Button?>\n<?import javafx.scene.control.TextField?>\n<?import javafx.scene.layout.AnchorPane?>\n<?import javafx.scene.layout.ColumnConstraints?>\n<?import javafx.scene.layout.GridPane?>\n<?import javafx.scene.layout.RowConstraints?>\n<?import javafx.scene.text.Font?>\n<?import javafx.scene.text.Text?>\n\n<GridPane alignment=\"center\" hgap=\"10\" vgap=\"10\" xmlns=\"http://javafx.com/javafx/15.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"sample.Controller\">\n   <columnConstraints>\n      <ColumnConstraints />\n   </columnConstraints>\n   <rowConstraints>\n      <RowConstraints />\n   </rowConstraints>\n   <children>\n      <AnchorPane prefHeight=\"201.0\" prefWidth=\"387.0\">\n         <children>\n            <Text fill=\"WHITE\" layoutX=\"110.0\" layoutY=\"39.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Commonwealth\" textAlignment=\"CENTER\" wrappingWidth=\"251.2060546875\">\n               <font>\n                  <Font name=\"Avenir Book\" size=\"32.0\" />\n               </font>\n            </Text>\n            <Text fill=\"WHITE\" layoutX=\"78.0\" layoutY=\"78.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"add your community service project!\" textAlignment=\"CENTER\" wrappingWidth=\"314.2060546875\">\n               <font>\n                  <Font name=\"Avenir Book\" size=\"19.0\" />\n               </font>\n            </Text>\n            <Button layoutX=\"26.0\" layoutY=\"123.0\" mnemonicParsing=\"false\" onAction=\"#setForm\" prefHeight=\"42.0\" prefWidth=\"167.0\" text=\"Set Form\" />\n            <Button layoutX=\"256.0\" layoutY=\"123.0\" mnemonicParsing=\"false\" onAction=\"#getForm\" prefHeight=\"42.0\" prefWidth=\"167.0\" text=\"Show Form\" />\n            <TextField fx:id=\"nameField\" layoutX=\"26.0\" layoutY=\"197.0\" prefHeight=\"36.0\" prefWidth=\"167.0\" promptText=\"Name\" />\n            <TextField fx:id=\"projectNameField\" layoutX=\"26.0\" layoutY=\"243.0\" prefHeight=\"36.0\" prefWidth=\"167.0\" promptText=\"Project Name\" stylesheets=\"@style.css\" />\n            <TextField fx:id=\"numOfHelpersField\" layoutX=\"26.0\" layoutY=\"289.0\" prefHeight=\"36.0\" prefWidth=\"167.0\" promptText=\"Number of people\" stylesheets=\"@style.css\" />\n            <TextField fx:id=\"locationField\" layoutX=\"26.0\" layoutY=\"335.0\" prefHeight=\"36.0\" prefWidth=\"167.0\" promptText=\"Location\" stylesheets=\"@style.css\" />\n            <TextField fx:id=\"fileName\" layoutX=\"256.0\" layoutY=\"197.0\" prefHeight=\"36.0\" prefWidth=\"167.0\" promptText=\"Enter project name\" stylesheets=\"@style.css\" />\n            <Button layoutX=\"26.0\" layoutY=\"418.0\" mnemonicParsing=\"false\" onAction=\"#goHome\" prefHeight=\"51.0\" prefWidth=\"398.0\" stylesheets=\"@style.css\" text=\"Go Home\" />\n         </children>\n      </AnchorPane>\n   </children>\n</GridPane>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/sample/sample.fxml b/src/sample/sample.fxml
+--- a/src/sample/sample.fxml	(revision 04570fb448a0fe4c7205cee7b8dd2481d686edf0)
++++ b/src/sample/sample.fxml	(date 1610847825673)
+@@ -19,24 +19,24 @@
+    <children>
+       <AnchorPane prefHeight="201.0" prefWidth="387.0">
+          <children>
+-            <Text fill="WHITE" layoutX="110.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commonwealth" textAlignment="CENTER" wrappingWidth="251.2060546875">
++            <Text fill="WHITE" layoutX="6.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commonwealth" textAlignment="CENTER" wrappingWidth="465.2060546875">
+                <font>
+-                  <Font name="Avenir Book" size="32.0" />
++                  <Font name="Trebuchet MS Bold" size="62.0" />
+                </font>
+             </Text>
+-            <Text fill="WHITE" layoutX="78.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="add your community service project!" textAlignment="CENTER" wrappingWidth="314.2060546875">
++            <Text fill="WHITE" layoutX="78.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="add your community service project!" textAlignment="CENTER" wrappingWidth="314.2060546875">
+                <font>
+                   <Font name="Avenir Book" size="19.0" />
+                </font>
+             </Text>
+-            <Button layoutX="26.0" layoutY="123.0" mnemonicParsing="false" onAction="#setForm" prefHeight="42.0" prefWidth="167.0" text="Set Form" />
+-            <Button layoutX="256.0" layoutY="123.0" mnemonicParsing="false" onAction="#getForm" prefHeight="42.0" prefWidth="167.0" text="Show Form" />
+-            <TextField fx:id="nameField" layoutX="26.0" layoutY="197.0" prefHeight="36.0" prefWidth="167.0" promptText="Name" />
+-            <TextField fx:id="projectNameField" layoutX="26.0" layoutY="243.0" prefHeight="36.0" prefWidth="167.0" promptText="Project Name" stylesheets="@style.css" />
+-            <TextField fx:id="numOfHelpersField" layoutX="26.0" layoutY="289.0" prefHeight="36.0" prefWidth="167.0" promptText="Number of people" stylesheets="@style.css" />
+-            <TextField fx:id="locationField" layoutX="26.0" layoutY="335.0" prefHeight="36.0" prefWidth="167.0" promptText="Location" stylesheets="@style.css" />
+-            <TextField fx:id="fileName" layoutX="256.0" layoutY="197.0" prefHeight="36.0" prefWidth="167.0" promptText="Enter project name" stylesheets="@style.css" />
+-            <Button layoutX="26.0" layoutY="418.0" mnemonicParsing="false" onAction="#goHome" prefHeight="51.0" prefWidth="398.0" stylesheets="@style.css" text="Go Home" />
++            <Button layoutX="26.0" layoutY="143.0" mnemonicParsing="false" onAction="#setForm" prefHeight="42.0" prefWidth="167.0" text="Set Form" />
++            <Button layoutX="256.0" layoutY="143.0" mnemonicParsing="false" onAction="#getForm" prefHeight="42.0" prefWidth="167.0" text="Show Form" />
++            <TextField fx:id="nameField" layoutX="26.0" layoutY="217.0" prefHeight="36.0" prefWidth="167.0" promptText="Name" />
++            <TextField fx:id="projectNameField" layoutX="26.0" layoutY="263.0" prefHeight="36.0" prefWidth="167.0" promptText="Project Name" stylesheets="@style.css" />
++            <TextField fx:id="numOfHelpersField" layoutX="26.0" layoutY="309.0" prefHeight="36.0" prefWidth="167.0" promptText="Number of people" stylesheets="@style.css" />
++            <TextField fx:id="locationField" layoutX="26.0" layoutY="355.0" prefHeight="36.0" prefWidth="167.0" promptText="Location" stylesheets="@style.css" />
++            <TextField fx:id="fileName" layoutX="256.0" layoutY="217.0" prefHeight="36.0" prefWidth="167.0" promptText="Enter project name" stylesheets="@style.css" />
++            <Button layoutX="26.0" layoutY="438.0" mnemonicParsing="false" onAction="#goHome" prefHeight="51.0" prefWidth="398.0" text="Go Home" />
+          </children>
+       </AnchorPane>
+    </children>
