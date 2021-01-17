@@ -16,6 +16,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoException;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB.*;
+
 
 public class Controller {
 
@@ -58,21 +67,55 @@ public class Controller {
 
     }
     public void setForm(javafx.event.ActionEvent event){
-        form = createProject.getInstance();
-        form.setName(nameField.getText());
-        form.setLocation(locationField.getText());
-        form.setNumOfHelpers(Integer.parseInt(numOfHelpersField.getText()));
-        form.setProjectName(projectNameField.getText());
-        try{
-            FileOutputStream f = new FileOutputStream(new File(form.projectName + ".txt"));
-            ObjectOutputStream o = new ObjectOutputStream(f);
-            o.writeObject(form);
-            o.close();
-            f.close();
-        }catch (FileNotFoundException e) {
-            System.out.println("File not found");
-        } catch (IOException e) {
-            System.out.println("Error initializing stream");
+        MongoClient mongoClient = null;
+        try {
+            // Set up mongo db
+            mongoClient = new MongoClient();
+            DB database = mongoClient.getDB("myMongoDb");
+            boolean auth = database.authenticate("username", "pwd".toCharArray());
+
+            mongoClient = new MongoClient( );
+            DB database = mongoClient.getDB("myMongoDb");
+            database.createCollection("services", null);
+            System.out.println("Connected to MongoDB!");
+
+            // form completion
+            /*
+            form = createProject.getInstance();
+            form.setName(nameField.getText());
+            form.setLocation(locationField.getText());
+            form.setNumOfHelpers(Integer.parseInt(numOfHelpersField.getText()));
+            form.setProjectName(projectNameField.getText());
+*/
+            DBCollection collection = database.getCollection("services");
+            BasicDBObject formEntry = new BasicDBObject();
+            formEntry.put("nameField", nameField.getText());
+            formEntry.put("locationField", locationField.getText());
+            formEntry.put("numOfHelpers", numOfHelpersField.getText());
+            formEntry.put("projectNameField", projectNameField.getText());
+            collection.insert(formEntry);
+            /*
+            try{
+                FileOutputStream f = new FileOutputStream(new File(form.projectName + ".txt"));
+                ObjectOutputStream o = new ObjectOutputStream(f);
+                o.writeObject(form);
+                o.close();
+                f.close();
+            }catch (FileNotFoundException e) {
+                System.out.println("File not found");
+            } catch (IOException e) {
+                System.out.println("Error initializing stream");
+            }
+            */
+
+
+        } catch (MongoException e) {
+            e.printStackTrace();
+        } finally {
+            if(mongoClient!=null)
+                mongoClient.close();
         }
+
+
     }
 }
