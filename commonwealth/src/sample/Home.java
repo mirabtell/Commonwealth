@@ -17,6 +17,7 @@ public class Home {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setTitle("Create Project");
         window.setScene(homeScene);
+        homeScene.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
         window.show();
     }
 }

@@ -30,8 +30,9 @@ public class Controller {
         Parent homeRoot = FXMLLoader.load(getClass().getResource("Home.fxml"));
         Scene homeScene = new Scene(homeRoot);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setTitle("CommonWealth");
+        window.setTitle("Commonwealth");
         window.setScene(homeScene);
+        homeScene.getStylesheets().add(Main.class.getResource("homestyle.css").toExternalForm());
         window.show();
     }
     public void getForm(ActionEvent event) {
