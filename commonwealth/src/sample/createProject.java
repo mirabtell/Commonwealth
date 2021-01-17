@@ -2,21 +2,22 @@ package sample;
 
 import java.io.Serializable;
 
-public class test implements Serializable {
+public class createProject implements Serializable {
 
     private static final long serialVersionUID = 1L;
     static String projectName;
     static String name;
     static String location;
     static int numOfHelpers;
-    private static test instance = null;
-    private test(){
+    static int numOfHelpersAvailable;
+    private static createProject instance = null;
+    private createProject(){
 
     }
 
-    public static test getInstance(){
+    public static createProject getInstance(){
         if (instance == null) {
-            instance = new test();
+            instance = new createProject();
         }
         return instance;
     }
@@ -31,6 +32,9 @@ public class test implements Serializable {
     }
     public void setProjectName(String projectName){
         this.projectName = projectName;
+    }
+    public void addToHelpers(){
+        this.numOfHelpersAvailable = numOfHelpersAvailable + 1;
     }
 
 }

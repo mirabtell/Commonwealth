@@ -24,23 +24,23 @@ public class Controller {
     public TextField numOfHelpersField;
     public TextField locationField;
     public TextField fileName;
-    test form;
-    test output;
+    createProject form;
+    createProject output;
     public void goHome(ActionEvent event) throws IOException {
         Parent homeRoot = FXMLLoader.load(getClass().getResource("Home.fxml"));
         Scene homeScene = new Scene(homeRoot);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setTitle("Home");
+        window.setTitle("CommonWealth");
         window.setScene(homeScene);
         window.show();
     }
     public void getForm(ActionEvent event) {
-        output = test.getInstance();
+        output = createProject.getInstance();
         try{
             System.out.println("name of file is " + fileName.getText());
             FileInputStream fi = new FileInputStream(new File(fileName.getText() + ".txt"));
             ObjectInputStream oi = new ObjectInputStream(fi);
-            output = (test) oi.getObjectInputFilter();
+            output = (createProject) oi.getObjectInputFilter();
             oi.close();
             fi.close();
             System.out.println("Displaying current file:");
@@ -57,7 +57,7 @@ public class Controller {
 
     }
     public void setForm(javafx.event.ActionEvent event){
-        form = test.getInstance();
+        form = createProject.getInstance();
         form.setName(nameField.getText());
         form.setLocation(locationField.getText());
         form.setNumOfHelpers(Integer.parseInt(numOfHelpersField.getText()));
